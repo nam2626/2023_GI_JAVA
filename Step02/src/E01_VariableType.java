@@ -16,8 +16,34 @@ public class E01_VariableType {
 		
 		byte b = 127;
 		System.out.println(b);
+		b++;
+		System.out.println(b);
 		
+		double d = 3.1415;
+		System.out.println(d);
 		
+		float f = 3.1415F;
+		System.out.println(f);
+		
+		boolean bl = true;
+		System.out.println(bl);
+		bl = false;
+		System.out.println(bl);
+		
+		char ch1 = 'A';
+		System.out.println(ch1);
+		
+		char ch2 = 'B';
+		System.out.println(ch2);
 	}
 
 }
+
+
+
+
+
+
+
+
+
