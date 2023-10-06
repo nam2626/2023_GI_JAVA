@@ -35,6 +35,18 @@ public class E02_Casting {
 		System.out.println('A' + 1);
 		System.out.println('A' + 'B');
 		
+		//강제로 형변환하는 방법 ---> (바꾸고 싶은 변수 타입) 값 or 변수
+		double pi = -3.1415;
+		int i = (int)pi;
+		System.out.println(i);
+		System.out.println(pi);
+		
+		int a = 65;
+		//a 출력할때 대문자 A가 나오게끔 처리
+		char c = (char)a;
+		System.out.println(c);
+		System.out.println((char)a);
+		
 		
 	}
 
