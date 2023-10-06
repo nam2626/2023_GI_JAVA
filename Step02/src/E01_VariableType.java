@@ -35,6 +35,23 @@ public class E01_VariableType {
 		
 		char ch2 = 'B';
 		System.out.println(ch2);
+		
+		int i1 = ch1, i2 = ch2;
+		System.out.println(i1);
+		System.out.println(i2);
+		
+		i1 = 'a';
+		System.out.println(i1);
+		
+		char ch3 = '가';
+		int i3 = ch3;
+		System.out.println(i3 + " " + ch3);
+		
+		//문자열
+		String str = "안녕하세요";
+		System.out.println(str);
+		str = "Hello World";
+		System.out.println(str);
 	}
 
 }
