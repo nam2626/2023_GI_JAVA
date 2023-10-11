@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class E07_Quest5 {
 	/*
@@ -10,7 +11,31 @@ public class E07_Quest5 {
 	 * 
 	 */
 	public static void main(String[] args) {
-
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("숫자 입력 > ");
+		int n = sc.nextInt();
+		
+		int i = 0;
+		
+		while(i < n) {
+			i++;
+			if(n % i == 0)
+				System.out.print(i + " ");
+		}
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
