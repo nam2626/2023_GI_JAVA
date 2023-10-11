@@ -28,5 +28,6 @@
     <ol>
 		<li>switch문</li>
         <li>while문</li>
+		<li>for문</li>
     </ol>
 </ul>
