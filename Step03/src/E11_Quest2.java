@@ -8,17 +8,27 @@ public class E11_Quest2 {
 		System.out.print("점수 입력 : ");
 		int score = sc.nextInt();
 
-		if (score > 89)
+		switch(score / 10) {
+		case 10:
+		case 9:
 			System.out.println("A");
-		else if (score > 79)
+			break;
+		case 8:
 			System.out.println("B");
-		else if (score > 69)
+			break;
+		case 7:
 			System.out.println("C");
-		else if (score > 59)
+			break;
+		case 6:
 			System.out.println("D");
-		else
+			break;
+		default:
 			System.out.println("F");
-
+		}
 	}
 
 }
+
+
+
+
