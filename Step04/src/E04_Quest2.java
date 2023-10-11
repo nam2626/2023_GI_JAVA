@@ -24,8 +24,8 @@ public class E04_Quest2 {
 		while(i < 10) {
 			System.out.println(dan + " * " + i + " = " + dan * i);
 			i++;
-		}
-	}
+		} //while
+	}//main
 
 }
 
