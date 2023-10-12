@@ -23,6 +23,8 @@ public class E12_MathEx {
 		System.out.println(Math.sin(Math.toRadians(40)));
 		System.out.println(Math.cos(Math.toRadians(40)));
 		System.out.println(Math.tan(Math.toRadians(40)));
+		//랜덤 : 0 < n < 1
+		System.out.println(Math.random());
 	}
 
 }
