@@ -38,6 +38,12 @@ public class E12_ArrayEx7 {
 				break;
 			i++;
 		}
+		
+		int sum = 0;
+		for(int j=0;j<i;j++) {
+			sum += arr[j];
+		}
+		System.out.println(sum / (double)i);
 		System.out.println(Arrays.toString(arr));
 	}
 }
