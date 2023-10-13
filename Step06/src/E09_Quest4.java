@@ -7,5 +7,13 @@ public class E09_Quest4 {
 	public static void main(String[] args) {
 		String str = "Hello World";
 		char[] arr = str.toCharArray();
+		
+		for(int i=0;i<arr.length;i++) {
+			if(arr[i] >= 'a' && arr[i] <= 'z')
+				arr[i] -= 32;
+		}
+		
+		str = new String(arr);
+		System.out.println(str);
 	}
 }
