@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class E28_Quest13 {
 	/*
@@ -7,7 +8,32 @@ public class E28_Quest13 {
 	 * 
 	 */
 	public static void main(String[] args) {
+		int[] arr1 = new int[10];
+		int[] arr2 = new int[10];
+		
+		for (int i = 0; i < arr1.length; i++) {
+			arr1[i] = (int)(Math.random() * 30) + 1;
+		}
+		//버블정렬
+		for(int i = 0; i < arr1.length - 1; i++) {
+			for(int j = 0; j < arr1.length - 1 - i; j++) {
+				if(arr1[j] > arr1[j+1]) {
+					int temp = arr1[j];
+					arr1[j] = arr1[j+1];
+					arr1[j+1] = temp;
+				}
+			}
+		}
+		System.out.println(Arrays.toString(arr1));
 		
 	}
 
 }
+
+
+
+
+
+
+
+
