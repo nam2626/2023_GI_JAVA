@@ -23,7 +23,7 @@ public class E18_Quest10 {
 		Scanner sc = new Scanner(System.in);
 		int w, d, l;
 		w = d = l = 0;
-		String[] str = {"바위","가위","보"};
+		String[] str = {"","바위","가위","보"};
 		for(int i=0;i<5; i++) {
 			System.out.println("------- " + (i+1) + "회차 -------");
 			System.out.print("가위 - 2, 바위 - 1, 보 - 3 입력하세요 : ");
@@ -32,16 +32,16 @@ public class E18_Quest10 {
 			
 			if(player % 3 + 1 == com) {
 				//사용자 승
-				System.out.printf("사용자 : %s, 컴퓨터 : %s 사용자가 이겼습니다.\n",str[player-1],str[com-1]);
+				System.out.printf("사용자 : %s, 컴퓨터 : %s 사용자가 이겼습니다.\n",str[player],str[com]);
 				w++;
 			}else if(player == com) {
 				//무승부
-				System.out.printf("사용자 : %s, 컴퓨터 : %s 무승부입니다.\n",str[player-1],str[com-1]);
+				System.out.printf("사용자 : %s, 컴퓨터 : %s 무승부입니다.\n",str[player],str[com]);
 				d++;
 			}else {
 				//컴퓨터 승
 				l++;
-				System.out.printf("사용자 : %s, 컴퓨터 : %s 컴퓨터가 이겼습니다.\n",str[player-1],str[com-1]);
+				System.out.printf("사용자 : %s, 컴퓨터 : %s 컴퓨터가 이겼습니다.\n",str[player],str[com]);
 			}
 		}
 		System.out.printf("승 : %d, 무 : %d, 패 : %d\n",w,d,l);
