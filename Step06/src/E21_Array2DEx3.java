@@ -6,20 +6,20 @@ public class E21_Array2DEx3 {
 	 * 		11 12 13 14 15
 	 * 		16 17 18 19 20
 	 * 		21 22 23 24 25
-	 * 
-	 * 
 	 */
-	
-	
 	public static void main(String[] args) {
 		int[][] arr = new int[5][5];
 		
 		int n = 1;
+		int col = 0, sw = 1;
 		
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
-				arr[i][j] = n++;
+				arr[i][col] = n++;
+				col += sw;
 			}
+			sw = -sw;
+			col += sw;
 		}
 		
 		for (int i = 0; i < arr.length; i++) {
