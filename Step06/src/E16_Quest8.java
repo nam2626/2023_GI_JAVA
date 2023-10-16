@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class E16_Quest8 {
 	/*
 	 * 	정수형 배열 길이가 10인 배열을 생성 한뒤에
@@ -15,9 +18,41 @@ public class E16_Quest8 {
 	 * 
 	 */
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[] arr = new int[10];
+		int left=0,right=arr.length-1;
+		while(left <= right) {
+			System.out.print("숫자 입력 >");
+			int n = sc.nextInt();
+			
+			if(n % 2 == 1)
+				arr[left++] = n;
+			else
+				arr[right--] = n;
+		}
+		
+		System.out.println(Arrays.toString(arr));
+		
 		
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
