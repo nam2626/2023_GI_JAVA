@@ -26,6 +26,19 @@ public class E28_Quest13 {
 		}
 		System.out.println(Arrays.toString(arr1));
 		
+		//삽입정렬
+		for (int i = 0; i < arr2.length; i++) {
+			arr2[i] = (int)(Math.random() * 30) + 1;
+			
+			for (int j = i; j > 0 && arr2[j] < arr2[j-1]; j--) {
+				int temp = arr2[j];
+				arr2[j] = arr2[j-1];
+				arr2[j-1] = temp;
+			}
+			
+		}
+		System.out.println(Arrays.toString(arr2));
+		
 	}
 
 }
