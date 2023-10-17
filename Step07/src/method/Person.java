@@ -22,12 +22,27 @@ public class Person {
 		this.age = age;
 		this.gender = gender;
 	}
+	//이름을 수정하는 메서드
+	void updateName(String name) {
+		this.name = name;
+	}
 	
 	//인적정보를 출력하는 기능 -> 이름 나이 남자/여자
 	void printPersonInfo(){
 		//true : 남자, false : 여자
 		System.out.println(name + " " + age + " " + (gender ? "남자" : "여자"));
 	}
+	
+	//성별 정보를 외부로 보내는 메서드 남자/여자
+	String getGender() {
+//		if(gender)
+//			return "남자";
+//		else
+//			return "여자";
+		return gender ? "남자" : "여자";
+	}
+	
+	
 	
 	//toString
 	@Override
