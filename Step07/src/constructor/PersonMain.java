@@ -8,6 +8,12 @@ public class PersonMain {
 		p1.age = 20;
 		
 		System.out.println(p1.name + " " + p1.age);
+		
+		Person p2 = new Person("홍길동", 11);
+		System.out.println(p2.name + " " + p2.age);
+		
+		Person p3 = new Person("이영희");
+		System.out.println(p3.name + " " + p3.age);
 	}
 
 }

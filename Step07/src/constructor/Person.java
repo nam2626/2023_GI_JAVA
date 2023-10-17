@@ -27,6 +27,11 @@ public class Person {
 		name = n;
 		age = a;
 	}
+	//이름을 외부에서 받아서 초기화, 나이는 0으로 초기화하는 생성자
+	Person(String n){
+		System.out.println("Person(String) - 생성자");
+		name = n;
+	}
 }
 
 
