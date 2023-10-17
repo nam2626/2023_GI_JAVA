@@ -21,12 +21,31 @@ public class E31_Quest16 {
 		
 		while(num <= count) {
 			//배열에 값을 저장
-			
-			//행변호, 열번호를 계산(임시변수)
+			arr[row][col] = num++;
+			//행번호, 열번호를 계산(임시변수)
 			//1. 오른쪽 위로 이동이 기본 -> 행번호 -, 열번호 +
 			//2. 이동할 위치가 인덱스 범위를 벗어 났느냐? -> 벗어나면 반대로 이동
 			//3. 다음 위치에 값이 있냐? 있으면 -> 현재위치 아래로 이동, 없으면 해당 위치로 이동
 			//4. 계산한 행번호 열번호를 row, col에 저장
+			int tempRow = row, tempCol = col;
+			
+			tempRow--;
+			tempCol++;
+			
+			if(tempRow == arr.length) tempRow -= arr.length;
+			if(tempCol == arr.length) tempCol -= arr.length;
+			if(tempRow == -1) tempRow += arr.length;
+			if(tempCol == -1) tempCol += arr.length;
+			
+			if(arr[tempRow][tempCol] != 0) {
+				//이동할 위치에 값이 있다.
+				//행번호 증가
+				row++;
+			}else {
+				//이동할 인덱스 번호 저장
+				row = tempRow;
+				col = tempCol;
+			}
 			
 			//중간 과정을 출력
 			for (int i = 0; i < arr.length; i++) {
@@ -35,6 +54,7 @@ public class E31_Quest16 {
 				}
 				System.out.println();
 			}
+			System.out.println("---------------------------");
 		}
 		
 		
