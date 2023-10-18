@@ -85,7 +85,24 @@ public class TV {
 	
 	public void remote(int n) {
 		switch(n) {
-		
+		case 1:
+			powerOnOff();
+			break;
+		case 2:
+			channelUp();
+			break;
+		case 3:
+			channelDown();
+			break;
+		case 4:
+			volumeUp();
+			break;
+		case 5:
+			volumeDown();
+			break;
+		case 6:
+			muteOnOff();
+			break;
 		}
 	}
 	
