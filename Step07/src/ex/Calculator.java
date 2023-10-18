@@ -8,30 +8,43 @@ package ex;
  */
 public class Calculator {
 	
+	private int sumCount;
+	private int minusCount;
+	private int multipleCount;
+	private int divCount;
+	
 	//정수 두개를 받아서 덧셈, 뺄셈, 곱셈, 나눗셈의 결과를 리턴하는 메서드 4개를 작성
 	int sum(int n1, int n2) {
+		sumCount++;
 		return n1 + n2;
 	}
 	int minus(int n1, int n2) {
+		minusCount++;
 		return n1 - n2;
 	}
 	int multiple(int n1, int n2) {
+		multipleCount++;
 		return n1 * n2;
 	}
 	int div(int n1, int n2) {
+		divCount++;
 		return n1 / n2;
 	}
 	//실수 두개를 받아서 덧셈, 뺄셈, 곱셈, 나눗셈의 결과를 리턴하는 메서드 4개를 작성
 	double sum(double n1, double n2) {
+		sumCount++;
 		return n1 + n2;
 	}
 	double minus(double n1, double n2) {
+		minusCount++;
 		return n1 - n2;
 	}
 	double multiple(double n1, double n2) {
+		multipleCount++;
 		return n1 * n2;
 	}
 	double div(double n1, double n2) {
+		divCount++;
 		return n1 / n2;
 	}
 	
@@ -45,7 +58,24 @@ public class Calculator {
 	int min(int n1, int n2) {
 		return n1 < n2 ? n1 : n2;
 	}
+	
+	/*
+	 *	사칙연산을 수행 할때마다 각 연산별 실행 횟수를 저장
+	 *	별도의 메서드를 통해서 사칙연산이 각각 몇 번 수행되었는지 출력
+	 *	 
+	 *	출력예시>
+	 * 		덧셈 : 1, 뺄셈 : 2, 곱셈 : 0, 나눗셈 : 4
+	 */
+	public void printCount() {
+		System.out.printf("덧셈 : %d, 뺄셈 : %d, 곱셈 : %d, 나눗셈 : %d",
+				sumCount,minusCount,multipleCount,divCount);
+	}
 }
+
+
+
+
+
 
 
 
