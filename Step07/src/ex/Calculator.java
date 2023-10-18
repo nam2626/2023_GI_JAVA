@@ -70,6 +70,18 @@ public class Calculator {
 		System.out.printf("덧셈 : %d, 뺄셈 : %d, 곱셈 : %d, 나눗셈 : %d",
 				sumCount,minusCount,multipleCount,divCount);
 	}
+	
+	/*
+	 * 숫자 n이 소수면 true를 리턴, 아니면 false를 리턴하는 메서드를 작성
+	 */
+	public boolean checkPrimeNumber(int n) {
+		if(n < 2) return false;
+		for(int i=2;i<n;i++) {
+			if(n % i == 0)
+				return false;
+		}
+		return true;
+	}
 }
 
 
