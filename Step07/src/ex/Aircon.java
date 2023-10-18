@@ -23,7 +23,7 @@ public class Aircon {
 	private int mode;
 	private int timer;
 	private int windPower;
-	private int windAngle;
+	private boolean windAngle;
 	//2. 생성자 = 기본생성자로 생성해서 알맞는 값으로 초기화
 	public Aircon() {
 		temp = 24;
@@ -94,8 +94,26 @@ public class Aircon {
 		
 	}
 	//바람각도 : 자동, 고정
+	public void changeWindAngle() {
+		if(!power) return;
+		windAngle = !windAngle;
+		System.out.println(windAngle ? "바람각도 : 자동" : "바람각도 : 고정");
+	}
 	
 	//타이머는 4시간까지만 적용, 1시간뒤 꺼집니다., 타이머를 해제합니다.
+	public void setTimer() {
+		if(!power) return;
+		timer++;
+		timer %= 5;
+		
+		switch(timer) {
+		case 0:
+			System.out.println("타이머를 해제합니다.");
+			break;
+		default:
+			System.out.println(timer+ "시간뒤 꺼집니다.");
+		}
+	}
 }
 
 

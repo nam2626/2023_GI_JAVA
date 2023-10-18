@@ -17,6 +17,27 @@ public class AirconMain {
 		aircon.changeMode();
 		aircon.changeMode();
 		aircon.changeMode();
+		
+		aircon.changeWindAngle();
+		aircon.changeWindAngle();
+		aircon.changeWindAngle();
+		aircon.changeWindAngle();
+
+		aircon.changeWindPower();
+		aircon.changeWindPower();
+		aircon.changeWindPower();
+		aircon.changeWindPower();
+		aircon.changeWindPower();
+		aircon.changeWindPower();
+		
+		aircon.setTimer();
+		aircon.setTimer();
+		aircon.setTimer();
+		aircon.setTimer();
+		aircon.setTimer();
+		aircon.setTimer();
+		aircon.setTimer();
+		aircon.setTimer();
 	}
 
 }
