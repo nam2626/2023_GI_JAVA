@@ -7,7 +7,16 @@ public class AirconMain {
 		aircon.powerOnOff();
 		aircon.powerOnOff();
 		aircon.powerOnOff();
-		aircon.powerOnOff();
+		
+		for(int i=0;i<20;i++)
+			aircon.tempDown();
+		
+		aircon.changeMode();
+		aircon.changeMode();
+		aircon.changeMode();
+		aircon.changeMode();
+		aircon.changeMode();
+		aircon.changeMode();
 	}
 
 }
