@@ -114,6 +114,34 @@ public class Aircon {
 			System.out.println(timer+ "시간뒤 꺼집니다.");
 		}
 	}
+
+	public void remote(int no) {
+		switch(no) {
+		case 1:
+			powerOnOff();
+			break;
+		case 2:
+			tempUp();
+			break;
+		case 3:
+			tempDown();
+			break;
+		case 4:
+			changeMode();
+			break;
+		case 5:
+			changeWindPower();
+			break;
+		case 6:
+			changeWindAngle();
+			break;
+		case 7:
+			setTimer();
+			break;
+		}
+	}
+	
+	
 }
 
 
