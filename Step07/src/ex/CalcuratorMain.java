@@ -12,6 +12,17 @@ public class CalcuratorMain {
 				System.out.print(i + " ");
 		}
 		System.out.println();
+		
+		int[] arr = {1,2,4,5,6,2,5,6,22};
+		System.out.println(cal.avgArray(arr));
+		
+		System.out.println(cal.avgArray2(1,2,3,4,5,6));
+		System.out.println(cal.avgArray2(1,2,3,4,5));
 	}
 
 }
+
+
+
+
+

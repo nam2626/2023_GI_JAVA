@@ -82,6 +82,24 @@ public class Calculator {
 		}
 		return true;
 	}
+	
+	//숫자를 여러개를 매개변수로 받아서, 매개변수로 받은 숫자들의 평균을 리턴 메서드를 작성
+	//단 숫자는 몇개를 받을지 모름
+	public double avgArray(int[] arr) {
+		int sum = 0;
+		for(int n : arr)
+			sum += n;
+		return (double)sum / arr.length;
+	}
+	
+	//가변길이 매개변수
+	public double avgArray2(int...arr) {
+		int sum = 0;
+		for(int n : arr)
+			sum += n;
+		return (double)sum / arr.length;
+	}
+	
 }
 
 
