@@ -16,5 +16,42 @@ package ex;
  * 
  */
 public class TV {
-
+	private boolean power;
+	private int channel;
+	private int volume;
+	private boolean mute;
+	
+	private final int MAX_CHANNEL = 356;
+	private final int MIN_CHANNEL = 1;
+	private final int MAX_VOLUME= 40;
+	private final int MIN_VOLUME= 0;
+	
+	public TV() {
+		channel = 9;
+		volume = 15;
+	}
+	
+	public void powerOnOff() {
+		power = !power;
+		System.out.println(power ? "TV 전원 On" : "TV 전원 Off");
+	}
+	
+	
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
