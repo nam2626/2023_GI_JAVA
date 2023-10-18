@@ -36,8 +36,58 @@ public class TV {
 		System.out.println(power ? "TV 전원 On" : "TV 전원 Off");
 	}
 	
+	public void channelUp() {
+		if(!power) return;
+		
+		channel %= 356;
+		channel++;
+		
+		System.out.println("현재 채널 : " + channel);
+	}
 	
+	public void channelDown() {
+		if(!power) return;
+		
+		if(channel > MIN_CHANNEL)
+			channel--;
+		else
+			channel = MAX_CHANNEL;
+		
+		System.out.println("현재 채널 : " + channel);
+		
+	}
 	
+	public void volumeUp() {
+		if(!power) return;
+		if(mute) {
+			muteOnOff();
+		}else {
+			if(volume < MAX_VOLUME) volume++;
+		}
+		System.out.println("현재 음량 : " + volume);
+	}
+
+	public void volumeDown() {
+		if(!power) return;
+		if(mute) {
+			muteOnOff();
+		}else {
+			if(volume > MIN_VOLUME) volume--;
+		}
+		System.out.println("현재 음량 : " + volume);
+	}
+	
+	public void muteOnOff() {
+		if(!power) return;
+		mute = !mute;
+		System.out.println(mute ? "음소거 활성화" : "음소거 비활성화");
+	}
+	
+	public void remote(int n) {
+		switch(n) {
+		
+		}
+	}
 	
 	
 }
