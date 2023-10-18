@@ -34,6 +34,27 @@ public class Employee {
 	public int getSalary() {
 		return salary;
 	}
+	
+	
+	
+	public String getEmployeeNo() {
+		return employeeNo;
+	}
+	public void setEmployeeNo(String employeeNo) {
+		this.employeeNo = employeeNo;
+	}
+	public String getEmployeeName() {
+		return employeeName;
+	}
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
+	public String getDepartment() {
+		return department;
+	}
+	public void setDepartment(String department) {
+		this.department = department;
+	}
 	//사원정보 출력하는 메서드
 	public void printEmployeeInfo(){
 		System.out.printf("%s %s %d %s\n",employeeNo,employeeName,salary,department);
