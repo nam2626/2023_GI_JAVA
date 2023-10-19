@@ -53,6 +53,22 @@ public class StudentService {
 		}
 	}
 
+	public void searchStudent(Scanner sc) {
+		System.out.println("학생정보 검색......");
+		
+		System.out.print("검색할 학생의 학번 : ");
+		String studentNo = sc.nextLine();
+		
+		for(int i=0;i<idx;i++) {
+			if(arr[i].getStudentNo().equals(studentNo)) {
+				System.out.println("검색 결과 : " + arr[i]);
+				return;
+			}
+		}
+		
+		System.out.println(studentNo + " 학번 검색 결과가 없습니다.");
+	}
+
 	
 }
 

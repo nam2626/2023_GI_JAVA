@@ -41,6 +41,7 @@ public class StudentMain {
 				service.registerStudent(sc);
 				break;
 			case 2:
+				service.searchStudent(sc);
 				break;
 			case 3:
 				break;
