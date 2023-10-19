@@ -73,7 +73,7 @@ public class Calculator {
 	
 	/*
 	 * 숫자 n이 소수면 true를 리턴, 아니면 false를 리턴하는 메서드를 작성
-	 */
+	 */ 
 	public boolean checkPrimeNumber(int n) {
 		if(n < 2) return false;
 		for(int i=2;i<n;i++) {
