@@ -52,21 +52,52 @@ public class StudentService {
 			System.out.println(arr[i]);
 		}
 	}
-
+	
+	private int searchStudentNo(String studentNo) {
+		for(int i=0;i<idx;i++) {
+			if(arr[i].getStudentNo().equals(studentNo)) {
+				return i;
+			}
+		}
+		return -1;//검색 결과가 없을때
+	}
+	
 	public void searchStudent(Scanner sc) {
 		System.out.println("학생정보 검색......");
 		
 		System.out.print("검색할 학생의 학번 : ");
 		String studentNo = sc.nextLine();
 		
-		for(int i=0;i<idx;i++) {
-			if(arr[i].getStudentNo().equals(studentNo)) {
-				System.out.println("검색 결과 : " + arr[i]);
-				return;
-			}
+		int i = searchStudentNo(studentNo);
+		
+		if(i == -1)
+			System.out.println(studentNo + " 학번 검색 결과가 없습니다.");
+		else
+			System.out.println("검색결과\n" + arr[i]);
+		
+	}
+
+	public void updateStudent(Scanner sc) {
+		System.out.println("학생정보 수정......");
+		
+		System.out.print("수정할 학생의 학번 : ");
+		String studentNo = sc.nextLine();
+		
+		int i = searchStudentNo(studentNo);
+		
+		if(i == -1)
+			System.out.println(studentNo + " 학번 검색 결과가 없습니다.");
+		else {
+			System.out.print("이름 : ");
+				arr[i].setStudentName(sc.nextLine());
+				System.out.print("학과 : ");
+				arr[i].setMajor(sc.nextLine());
+				System.out.print("평점 : ");
+				arr[i].setScore(sc.nextDouble());
+				sc.nextLine();
+				System.out.println("데이터 수정 완료.");
 		}
 		
-		System.out.println(studentNo + " 학번 검색 결과가 없습니다.");
 	}
 
 	

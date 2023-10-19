@@ -44,6 +44,7 @@ public class StudentMain {
 				service.searchStudent(sc);
 				break;
 			case 3:
+				service.updateStudent(sc);
 				break;
 			case 4:
 				break;
