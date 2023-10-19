@@ -2,6 +2,8 @@ package main;
 
 import java.util.Scanner;
 
+import service.StudentService;
+
 public class StudentMain {
 	/*
 	 * 		-----학적관리프로그램-----
@@ -17,7 +19,7 @@ public class StudentMain {
 	 */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
+		StudentService service = new StudentService();
 		while(true) {
 			//메뉴출력
 			System.out.println("-----학적관리프로그램-----");
@@ -36,6 +38,7 @@ public class StudentMain {
 			//메뉴번호에 해당하는 기능을 실행 - switch
 			switch(no) {
 			case 1:
+				service.registerStudent(sc);
 				break;
 			case 2:
 				break;
