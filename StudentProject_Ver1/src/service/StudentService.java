@@ -129,6 +129,17 @@ public class StudentService {
 		
 		return rank;
 	}
+
+	public void maxRankStudent() {
+		System.out.println("석차 1등.........");
+		
+		for(int i=0;i<idx;i++) {
+			if(getRank(arr[i].getScore()) == 1) {
+				System.out.println(arr[i]);
+				break;
+			}
+		}
+	}
 }
 
 

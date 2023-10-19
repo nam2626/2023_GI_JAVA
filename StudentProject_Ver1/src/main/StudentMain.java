@@ -28,6 +28,7 @@ public class StudentMain {
 			System.out.println("3. 학생정보 수정");
 			System.out.println("4. 학생정보 삭제");
 			System.out.println("5. 학생정보 전체 조회");
+			System.out.println("6. 석차 1등 조회");
 			System.out.println("0. 프로그램 종료");
 			System.out.println("원하시는 번호를 입력하세요 :");
 			//메뉴 번호를 입력 받음
@@ -51,6 +52,9 @@ public class StudentMain {
 				break;
 			case 5:
 				service.printAllStudent();
+				break;
+			case 6:
+				service.maxRankStudent();
 				break;
 			}
 		}
