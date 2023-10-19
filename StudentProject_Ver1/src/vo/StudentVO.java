@@ -42,7 +42,7 @@ public class StudentVO {
 	//toString --> 학번 이름 학과명 평점
 	@Override
 	public String toString() {
-		return String.format("%s %s %s %f", studentNo,studentName,major,score);
+		return String.format("%10s %10s %10s %.2f", studentNo,studentName,major,score);
 	}
 	
 	
