@@ -49,7 +49,7 @@ public class StudentService {
 		System.out.println("학생 정보 전체 출력.....");
 		
 		for(int i=0;i<idx;i++) {
-			System.out.println(arr[i]);
+			System.out.println(getRank(arr[i].getScore())+" "+ arr[i]);
 		}
 	}
 	
@@ -119,7 +119,16 @@ public class StudentService {
 		}
 	}
 
-	
+	private int getRank(double score) {
+		int rank = 1;
+		
+		for(int i=0;i<idx;i++) {
+			if(score < arr[i].getScore())
+				rank++;
+		}
+		
+		return rank;
+	}
 }
 
 
