@@ -100,6 +100,25 @@ public class StudentService {
 		
 	}
 
+	public void deleteStudent(Scanner sc) {
+		System.out.println("학생정보 삭제......");
+		
+		System.out.print("삭제할 학생의 학번 : ");
+		String studentNo = sc.nextLine();
+		
+		int i = searchStudentNo(studentNo);
+		
+		if(i == -1)
+			System.out.println(studentNo + " 학번 검색 결과가 없습니다.");
+		else {
+			for(int j=i;j<idx-1;j++) {
+				arr[j] = arr[j+1];
+			}
+			idx--;
+			System.out.println("데이터 삭제 완료");
+		}
+	}
+
 	
 }
 
