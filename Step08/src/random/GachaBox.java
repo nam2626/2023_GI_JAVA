@@ -40,13 +40,26 @@ public class GachaBox {
 	}
 	
 	public String[] drawItem(int ea) {
-		String[] arr = new String[10];
+		String[] arr = new String[ea];
 		final String[] gachar = generateGachaBox();
-		//뽑기를 총 ea 번째
-		//똑같은 숫자를 뽑으면 안됨
 		int[] temp = new int[ea];
+		Random r = new Random();
+		//뽑기를 총 ea 번째
+		for(int i=0;i<ea;i++) {
+			//똑같은 숫자를 뽑으면 안됨
+			int n = r.nextInt(gachar.length);
+			temp[i]=n;
+			for(int j=0;j<i;j++) {
+				if(temp[j] == n) {
+					i--;
+					break;
+				}
+			}
+		}
 		//가챠박스에 있는 내용을 arr에 저장
-		
+		for(int i=0;i<temp.length;i++) {
+			arr[i] = gachar[i];
+		}
 		return arr;
 	}
 	
