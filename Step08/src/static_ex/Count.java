@@ -16,7 +16,12 @@ public class Count {
 		total_count++;
 	}
 	
-	
+	public static void addFieldCount() {
+		//count++;
+		//static은 non-static에 접근이 불가능
+		//static은 사용하는 시점에 non-static이 생성되지 않을 수도 있고,
+		//어떤 객체의 대상인지 구분이 불가능하다.
+	}
 	
 }
 
