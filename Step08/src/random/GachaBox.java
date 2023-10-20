@@ -39,7 +39,16 @@ public class GachaBox {
 		return arr;
 	}
 	
-	
+	public String[] drawItem(int ea) {
+		String[] arr = new String[10];
+		final String[] gachar = generateGachaBox();
+		//뽑기를 총 ea 번째
+		//똑같은 숫자를 뽑으면 안됨
+		int[] temp = new int[ea];
+		//가챠박스에 있는 내용을 arr에 저장
+		
+		return arr;
+	}
 	
 	
 }
