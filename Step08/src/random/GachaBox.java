@@ -1,15 +1,16 @@
 package random;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
 
 public class GachaBox {
-	private final int[] GRADE_EA= {14,700,1800,2800,4686};
-	
+	private final int[] GRADE_EA;
+	private final int BOX_EA = 100000;
 	private static GachaBox instance = new GachaBox();
 	
-	private GachaBox() {	}
+	private GachaBox() {
+		GRADE_EA = new int[]{(int)(0.14 * BOX_EA), (int)(7 * BOX_EA), (int)(18 * BOX_EA),
+				(int)(28 * BOX_EA), (int)(46.86 * BOX_EA)};
+	}
 
 	public static GachaBox getInstance() {
 		if(instance == null)
@@ -18,12 +19,12 @@ public class GachaBox {
 	}
 
 	private String[] generateGachaBox() {
-		String[] arr = new String[10000];
+		String[] arr = new String[BOX_EA];
 		String[] grade = {"S","A","B","C","F"};		
 		int[] count = new int[5];
 		
 		Random r = new Random();
-		for(int i=0;i<10000;i++) {
+		for(int i=0;i<BOX_EA;i++) {
 			//1. 0~4까지 숫자를 랜덤하게 뽑음
 			int n = r.nextInt(5);
 			if(GRADE_EA[n] == count[n]) {
