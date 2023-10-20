@@ -1,5 +1,6 @@
 package random;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class GachaBox {
@@ -8,8 +9,8 @@ public class GachaBox {
 	private static GachaBox instance = new GachaBox();
 	
 	private GachaBox() {
-		GRADE_EA = new int[]{(int)(0.14 * BOX_EA), (int)(7 * BOX_EA), (int)(18 * BOX_EA),
-				(int)(28 * BOX_EA), (int)(46.86 * BOX_EA)};
+		GRADE_EA = new int[]{(int)(0.0014 * BOX_EA), (int)(0.07 * BOX_EA), (int)(0.18 * BOX_EA),
+				(int)(0.28 * BOX_EA), (int)(0.4686 * BOX_EA)};
 	}
 
 	public static GachaBox getInstance() {
@@ -36,7 +37,7 @@ public class GachaBox {
 			//3. count에도 해당 등급의 아이템 개수를 증가
 			count[n]++;			
 		}
-		
+//		System.out.println(Arrays.toString(arr));
 		return arr;
 	}
 	
@@ -57,6 +58,7 @@ public class GachaBox {
 				}
 			}
 		}
+//		System.out.println(Arrays.toString(temp));
 		//가챠박스에 있는 내용을 arr에 저장
 		for(int i=0;i<temp.length;i++) {
 			arr[i] = gachar[i];
