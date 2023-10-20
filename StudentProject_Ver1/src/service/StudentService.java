@@ -140,6 +140,19 @@ public class StudentService {
 			}
 		}
 	}
+
+	public void searchStudentName(Scanner sc) {
+		System.out.println("학생정보 검색......");
+		
+		System.out.print("검색할 학생의 이름 : ");
+		String studentName = sc.nextLine();
+	
+		for(int i=0;i<idx;i++) {
+			if(arr[i].getStudentName().indexOf(studentName) != -1)
+				System.out.println(arr[i]);
+		}
+		System.out.println();
+	}
 }
 
 
