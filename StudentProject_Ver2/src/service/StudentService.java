@@ -103,10 +103,7 @@ public class StudentService {
 		if(i == -1)
 			System.out.println(studentNo + " 학번 검색 결과가 없습니다.");
 		else {
-			for(int j=i;j<idx-1;j++) {
-				arr[j] = arr[j+1];
-			}
-			idx--;
+			list.remove(i);
 			System.out.println("데이터 삭제 완료");
 		}
 	}
