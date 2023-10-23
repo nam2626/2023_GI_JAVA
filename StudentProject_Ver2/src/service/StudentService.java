@@ -31,28 +31,23 @@ public class StudentService {
 		double score = sc.nextDouble();
 		sc.nextLine();
 		
-		//2. 입력받은 학생정보를 배열에 저장
-		//단 배열에 공간이 모자르면 배열개수를 3개씩 증가
-		if(idx == arr.length) {
-			StudentVO[] temp = new StudentVO[arr.length+3];
-			System.arraycopy(arr, 0, temp, 0, arr.length);
-			arr = temp;
-		}
-		arr[idx++] = new StudentVO(studentNo, studentName, major, score);
+		//2. 입력받은 학생정보를 리스트에 저장
+		list.add(new StudentVO(studentNo, studentName, major, score));
+		
 		System.out.println("학생정보 등록 완료");
 	}
 
 	public void printAllStudent() {
 		System.out.println("학생 정보 전체 출력.....");
 		
-		for(int i=0;i<idx;i++) {
-			System.out.println(getRank(arr[i].getScore())+" "+ arr[i]);
+		for(int i=0;i<list.size();i++) {
+			System.out.println(getRank(list.get(i).getScore())+" "+ list.get(i));
 		}
 	}
 	
 	private int searchStudentNo(String studentNo) {
-		for(int i=0;i<idx;i++) {
-			if(arr[i].getStudentNo().equals(studentNo)) {
+		for(int i=0;i<list.size();i++) {
+			if(list.get(i).getStudentNo().equals(studentNo)) {
 				return i;
 			}
 		}
@@ -70,7 +65,7 @@ public class StudentService {
 		if(i == -1)
 			System.out.println(studentNo + " 학번 검색 결과가 없습니다.");
 		else
-			System.out.println("검색결과\n" + arr[i]);
+			System.out.println("검색결과\n" + list.get(i));
 		
 	}
 
