@@ -136,9 +136,9 @@ public class StudentService {
 		System.out.print("검색할 학생의 이름 : ");
 		String studentName = sc.nextLine();
 	
-		for(int i=0;i<idx;i++) {
-			if(arr[i].getStudentName().indexOf(studentName) != -1)
-				System.out.println(arr[i]);
+		for(int i=0;i<list.size();i++) {
+			if(list.get(i).getStudentName().indexOf(studentName) != -1)
+				System.out.println(list.get(i));
 		}
 		System.out.println();
 	}
