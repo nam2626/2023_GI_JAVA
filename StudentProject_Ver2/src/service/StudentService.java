@@ -81,11 +81,11 @@ public class StudentService {
 			System.out.println(studentNo + " 학번 검색 결과가 없습니다.");
 		else {
 			System.out.print("이름 : ");
-				arr[i].setStudentName(sc.nextLine());
+				list.get(i).setStudentName(sc.nextLine());
 				System.out.print("학과 : ");
-				arr[i].setMajor(sc.nextLine());
+				list.get(i).setMajor(sc.nextLine());
 				System.out.print("평점 : ");
-				arr[i].setScore(sc.nextDouble());
+				list.get(i).setScore(sc.nextDouble());
 				sc.nextLine();
 				System.out.println("데이터 수정 완료.");
 		}
