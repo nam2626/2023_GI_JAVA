@@ -122,9 +122,9 @@ public class StudentService {
 	public void maxRankStudent() {
 		System.out.println("석차 1등.........");
 		
-		for(int i=0;i<idx;i++) {
-			if(getRank(arr[i].getScore()) == 1) {
-				System.out.println(arr[i]);
+		for(int i=0;i<list.size();i++) {
+			if(getRank(list.get(i).getScore()) == 1) {
+				System.out.println(list.get(i));
 				break;
 			}
 		}
