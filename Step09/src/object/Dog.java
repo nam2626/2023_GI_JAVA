@@ -30,6 +30,7 @@ public class Dog {
 		System.out.println("equals 호출");
 		if (this == obj)
 			return true;
+		if(hashCode() != obj.hashCode()) return false;
 		if (!(obj instanceof Dog))
 			return false;
 		Dog other = (Dog) obj;
