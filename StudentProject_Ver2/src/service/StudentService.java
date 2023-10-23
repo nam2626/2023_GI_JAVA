@@ -23,8 +23,12 @@ public class StudentService {
 		//1. 학생정보 입력
 		System.out.print("학번 : ");
 		String studentNo = sc.nextLine();
+		if(list.contains(new StudentVO(studentNo, null, null, 0))) {
+			System.out.println("동일한 학번이 있는 학생이 있습니다. 기능을 종료합니다.");
+			return;
+		}
 		System.out.print("이름 : ");
-		String studentName = sc.nextLine();
+		String studentName = sc.nextLine(); 
 		System.out.print("학과 : ");
 		String major = sc.nextLine();
 		System.out.print("평점 : ");
@@ -46,12 +50,7 @@ public class StudentService {
 	}
 	
 	private int searchStudentNo(String studentNo) {
-		for(int i=0;i<list.size();i++) {
-			if(list.get(i).getStudentNo().equals(studentNo)) {
-				return i;
-			}
-		}
-		return -1;//검색 결과가 없을때
+		return list.indexOf(new StudentVO(studentNo, null, null, 0));
 	}
 	
 	public void searchStudent(Scanner sc) {
