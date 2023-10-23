@@ -41,10 +41,13 @@ public class WrapperClass {
 		
 		//1.5 이전 버전에서의 boxing, unboxing
 		int i4 = 100;
-		Object obj = i4;
-		Integer i5 = (Integer) obj;
-		Object val = i5;
-		int i6 = (int) val;
+		Integer i5 = new Integer(i4); //boxing
+		int i6 = i5.intValue(); //unboxing
+		System.out.println(i6);
+		//---------------------
+		Object o1=new Integer(1); 
+		int i=((Integer)o1).intValue();
+		System.out.println(i);
 	}
 }
 
