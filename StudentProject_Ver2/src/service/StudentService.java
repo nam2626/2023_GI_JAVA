@@ -111,8 +111,8 @@ public class StudentService {
 	private int getRank(double score) {
 		int rank = 1;
 		
-		for(int i=0;i<idx;i++) {
-			if(score < arr[i].getScore())
+		for(int i=0;i<list.size();i++) {
+			if(score < list.get(i).getScore())
 				rank++;
 		}
 		
