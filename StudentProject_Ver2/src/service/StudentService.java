@@ -80,13 +80,13 @@ public class StudentService {
 			System.out.println(studentNo + " 학번 검색 결과가 없습니다.");
 		else {
 			System.out.print("이름 : ");
-				list.get(i).setStudentName(sc.nextLine());
-				System.out.print("학과 : ");
-				list.get(i).setMajor(sc.nextLine());
-				System.out.print("평점 : ");
-				list.get(i).setScore(sc.nextDouble());
-				sc.nextLine();
-				System.out.println("데이터 수정 완료.");
+			list.get(i).setStudentName(sc.nextLine());
+			System.out.print("학과 : ");
+			list.get(i).setMajor(sc.nextLine());
+			System.out.print("평점 : ");
+			list.get(i).setScore(sc.nextDouble());
+			sc.nextLine();
+			System.out.println("데이터 수정 완료.");
 		}
 		
 	}
@@ -97,14 +97,10 @@ public class StudentService {
 		System.out.print("삭제할 학생의 학번 : ");
 		String studentNo = sc.nextLine();
 		
-		int i = searchStudentNo(studentNo);
-		
-		if(i == -1)
-			System.out.println(studentNo + " 학번 검색 결과가 없습니다.");
-		else {
-			list.remove(i);
+		if(list.remove(new StudentVO(studentNo, null, null, 0)))
 			System.out.println("데이터 삭제 완료");
-		}
+		else 
+			System.out.println(studentNo + " 학번 검색 결과가 없습니다.");
 	}
 
 	private int getRank(double score) {
