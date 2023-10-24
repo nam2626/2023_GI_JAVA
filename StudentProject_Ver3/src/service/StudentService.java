@@ -29,6 +29,10 @@ public class StudentService {
 		return true;
 	}
 
+	public ArrayList<StudentVO> getList() {
+		return list;
+	}
+
 	
 	
 	

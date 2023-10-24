@@ -18,6 +18,9 @@ public class HandlerMapping {
 		case 1:
 			controller = new AppendStudentController();
 			break;
+		case 5:
+			controller = new PrintAllStudentController();
+			break;
 		}
 		
 		return controller;
