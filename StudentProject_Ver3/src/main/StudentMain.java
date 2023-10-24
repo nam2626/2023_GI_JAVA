@@ -2,6 +2,9 @@ package main;
 
 import java.util.Scanner;
 
+import controller.Controller;
+import controller.HandlerMapping;
+
 public class StudentMain {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -22,11 +25,20 @@ public class StudentMain {
 			sc.nextLine();
 			//0입력시 반복문 종료
 			if(no == 0) break;
-		
+			
+			//컨트롤러 객체를 받아옴
+			Controller controller = HandlerMapping.getInstance().createController(no);
+			if(controller != null)
+				controller.execute(sc);//컨트롤러 실행
 		}
 	}
 
 }
+
+
+
+
+
 
 
 

@@ -15,7 +15,9 @@ public class HandlerMapping {
 		Controller controller = null;
 		
 		switch(no) {
-		
+		case 1:
+			controller = new AppendStudentController();
+			break;
 		}
 		
 		return controller;
