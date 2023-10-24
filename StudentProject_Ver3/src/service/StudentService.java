@@ -33,6 +33,11 @@ public class StudentService {
 		return list;
 	}
 
+	public StudentVO searchStudentNo(String studentNo) {
+		int i = list.indexOf(new StudentVO(studentNo, null, null, 0));
+		return i > -1 ? list.get(i) : null;
+	}
+
 	
 	
 	
