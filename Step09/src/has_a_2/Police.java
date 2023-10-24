@@ -19,6 +19,7 @@ public class Police  {
 	
 	public void changeGun(Gun gun) {
 		this.gun = gun;
+		System.out.println(gun.getClass().getSimpleName() + "로 총기를 교체했습니다.");
 	}
 	
 	public void useHandCuffs() {

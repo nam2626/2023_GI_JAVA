@@ -11,6 +11,10 @@ public class PoliceMain {
 		for(int i=0;i<20;i++)
 			police.shot();
 		
+		police.changeGun(new AK47());
+		for(int i=0;i<20;i++)
+			police.shot();
+		
 		police.useHandCuffs();
 		police.useHandCuffs();
 		police.useHandCuffs();
