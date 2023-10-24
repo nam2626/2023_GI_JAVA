@@ -25,6 +25,7 @@ public class IotApp {
 	//디바이스 추가
 	public void addDevice(PowerOnOff device) {
 		if(list.size() < 10) {
+			if(device == null) return;
 			list.add(device);
 			System.out.println(device.getClass().getSimpleName() + " 기기 등록 완료");
 		}else {
