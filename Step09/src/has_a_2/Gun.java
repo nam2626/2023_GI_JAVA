@@ -1,4 +1,4 @@
-package has_a_1;
+package has_a_2;
 
 public class Gun {
 	//총알
