@@ -57,7 +57,8 @@ public class PowerAppMain {
 			
 			switch(no) {
 			case 1:
-				
+				PowerOnOff power = createDevice(sc);
+				app.addDevice(power);
 				break;
 			case 2:
 				app.deviceAllPowerOn();
