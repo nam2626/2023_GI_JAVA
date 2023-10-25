@@ -38,6 +38,10 @@ public class StudentService {
 		return i > -1 ? list.get(i) : null;
 	}
 
+	public boolean deleteStudent(String studentNo) {
+		return list.remove(new StudentVO(studentNo, null, null, 0));
+	}
+
 	
 	
 	
