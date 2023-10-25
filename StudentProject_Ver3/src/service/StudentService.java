@@ -64,10 +64,29 @@ public class StudentService {
 	}
 
 	public ArrayList<StudentVO> searchNameStudent(String name) {
-		return null;
+		ArrayList<StudentVO> result = new ArrayList<StudentVO>();
+		
+		for(int i=0;i<list.size();i++) {
+			if(list.get(i).getStudentName().indexOf(name) != -1)
+				result.add(list.get(i));
+		}
+		
+		return result;
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
