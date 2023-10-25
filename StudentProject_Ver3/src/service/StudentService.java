@@ -8,7 +8,7 @@ public class StudentService {
 	private static StudentService instance = new StudentService();
 
 	private ArrayList<StudentVO> list;
-	
+
 	private StudentService() {
 		list = new ArrayList<StudentVO>();
 		list.add(new StudentVO("1111", "홍길동", "컴퓨터공학과", 3.1));
@@ -18,13 +18,14 @@ public class StudentService {
 	}
 
 	public static StudentService getInstance() {
-		if(instance == null)
+		if (instance == null)
 			instance = new StudentService();
 		return instance;
 	}
 
 	public boolean appendStudent(StudentVO studentVO) {
-		if(list.contains(studentVO)) return false;
+		if (list.contains(studentVO))
+			return false;
 		list.add(studentVO);
 		return true;
 	}
@@ -42,8 +43,31 @@ public class StudentService {
 		return list.remove(new StudentVO(studentNo, null, null, 0));
 	}
 
-	
-	
-	
-	
+	public StudentVO topRankStudent() {
+		for (int i = 0; i < list.size(); i++) {
+			if (getRank(list.get(i).getScore()) == 1) {
+				return list.get(i);
+			}
+		}
+		return null;
+	}
+
+	public int getRank(double score) {
+		int rank = 1;
+
+		for (int i = 0; i < list.size(); i++) {
+			if (score < list.get(i).getScore())
+				rank++;
+		}
+
+		return rank;
+	}
+
+	public ArrayList<StudentVO> searchNameStudent(String name) {
+		return null;
+	}
+
 }
+
+
+

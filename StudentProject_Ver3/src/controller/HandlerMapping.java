@@ -30,6 +30,12 @@ public class HandlerMapping {
 		case 5:
 			controller = new PrintAllStudentController();
 			break;
+		case 6:
+			controller = new TopRankStudentController();
+			break;
+		case 7:
+			controller = new SearchNameStudentController();
+			break;
 		}
 		
 		return controller;
