@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import service.StudentService;
 
-public class DeleteStudentController extends Controller {
+public class DeleteStudentController implements Controller {
 	@Override
 	public void execute(Scanner sc) {
 		System.out.println("학생정보 삭제......");   

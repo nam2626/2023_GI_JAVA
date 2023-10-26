@@ -36,6 +36,9 @@ public class HandlerMapping {
 		case 7:
 			controller = new SearchNameStudentController();
 			break;
+		case 8:
+			controller = new PrintAllMajorController();
+			break;
 		}
 		
 		return controller;

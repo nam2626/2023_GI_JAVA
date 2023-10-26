@@ -74,6 +74,21 @@ public class StudentService {
 		return result;
 	}
 
+	public ArrayList<String> getMajorList() {
+		
+		ArrayList<String> result = new ArrayList<String>();
+		
+		for(int i=0;i<list.size();i++) {
+			//1. 학생 정보를 하나씩 뽑음
+			//2. 학과 정보를 뽑아서 리스트에 저장(중복이 안되게끔 처리)
+			if(!result.contains(list.get(i).getMajor()))
+				result.add(list.get(i).getMajor());
+		}
+		//3. 결과를 리턴
+		
+		return result;
+	}
+
 }
 
 

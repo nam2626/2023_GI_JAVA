@@ -5,7 +5,7 @@ import java.util.Scanner;
 import service.StudentService;
 import vo.StudentVO;
 
-public class SearchStudentController extends Controller {
+public class SearchStudentController implements Controller {
 	@Override
 	public void execute(Scanner sc) {
 		System.out.println("학생정보 검색......");

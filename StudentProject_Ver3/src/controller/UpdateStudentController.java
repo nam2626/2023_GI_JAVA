@@ -5,7 +5,7 @@ import java.util.Scanner;
 import service.StudentService;
 import vo.StudentVO;
 
-public class UpdateStudentController extends Controller {
+public class UpdateStudentController implements Controller {
 	@Override
 	public void execute(Scanner sc) {
 		System.out.println("회원정보 수정을 시작합니다..........");

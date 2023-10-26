@@ -5,7 +5,7 @@ import java.util.Scanner;
 import service.StudentService;
 import vo.StudentVO;
 
-public class TopRankStudentController extends Controller {
+public class TopRankStudentController implements Controller {
 	@Override
 	public void execute(Scanner sc) {
 		System.out.println("석차 1등.........");

@@ -5,7 +5,7 @@ import java.util.Scanner;
 import service.StudentService;
 import vo.StudentVO;
 
-public class AppendStudentController extends Controller {
+public class AppendStudentController implements Controller {
 
 	@Override
 	public void execute(Scanner sc) {
