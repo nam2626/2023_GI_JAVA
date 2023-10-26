@@ -1,6 +1,7 @@
 package collection;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ListExample {
 	/*
@@ -54,6 +55,15 @@ public class ListExample {
 		for(String str : list) {
 			System.out.println(str);
 		}
+		
+		//데이터를 꺼내는 방법 - 3
+		Iterator<String> it = list.iterator();
+		
+		while(it.hasNext()) {//다음 위치에 값이 있냐?
+			System.out.println(it.next());//다음 위치로 이동해서 값을 리턴 
+		}
+
+		
 		
 		//해당 데이터가 리스트에 있냐?
 		System.out.println(list.contains("자바"));
