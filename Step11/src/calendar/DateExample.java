@@ -11,7 +11,6 @@ public class DateExample {
 		Date date = new Date(1);
 		System.out.println(date);
 		System.out.println(date.getTime());
-		
 		Date d = new Date(123, 9, 10);
 		System.out.println(d);
 		System.out.println(d.getTime());
