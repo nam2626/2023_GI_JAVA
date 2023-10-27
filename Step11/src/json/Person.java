@@ -1,5 +1,8 @@
 package json;
 
+import org.json.JSONPropertyIgnore;
+import org.json.JSONPropertyName;
+
 //이름 나이
 //생성자 - 필드 초기화
 //set/get 
@@ -13,6 +16,8 @@ public class Person {
 		this.age = age;
 	}
 
+//	@JSONPropertyName("nm")
+//	@JSONPropertyIgnore //JSON으로 변환할 데이터 대상에서 빼야될때
 	public String getName() {
 		return name;
 	}
