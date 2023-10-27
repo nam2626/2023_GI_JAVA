@@ -68,5 +68,18 @@ public class EmployeeVO {
 		EmployeeVO other = (EmployeeVO) obj;
 		return Objects.equals(employeeNo, other.employeeNo);
 	}
+	
+	public void printEmployeeInfo() {
+		System.out.println(String.format("%s %s %d %s", employeeNo, employeeName, salary, department));
+	}
 
 }
+
+
+
+
+
+
+
+
+

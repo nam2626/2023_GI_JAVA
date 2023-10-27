@@ -17,7 +17,18 @@ public class HandlerMapping {
 		case 1:
 			controller = new AppendEmployeeController();
 			break;
-		
+		case 2:
+			controller = new DeleteEmployeeController();
+			break;
+		case 3:
+			controller = new UpdateEmployeeController();
+			break;
+		case 4:
+			controller = new SearchEmployeeController();
+			break;
+		case 5:
+			controller = new PrintAllEmployeeController();
+			break;
 		}
 		return controller;
 	}

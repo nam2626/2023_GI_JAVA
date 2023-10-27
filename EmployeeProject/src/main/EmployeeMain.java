@@ -17,6 +17,7 @@ public class EmployeeMain {
 			System.out.println("3. 사원정보 수정");
 			System.out.println("4. 사원정보 조회");
 			System.out.println("5. 사원정보 전체 조회");
+			System.out.println("6. 전체 사원정보 JSON으로 변환해서 조회");
 			System.out.println("0. 프로그램 종료");
 			System.out.print("원하시는 메뉴 번호를 입력하세요 : ");
 			int no = sc.nextInt();
