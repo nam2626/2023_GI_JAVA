@@ -1,12 +1,2 @@
+안녕하세요, 저는 OOO 입니다.
 Hello World
-안녕하세요
-Hello World
-안녕하세요
-Hello World
-안녕하세요
-Hello World
-안녕하세요
-Hello World
-안녕하세요
-Hello World
-안녕하세요
