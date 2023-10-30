@@ -6,7 +6,7 @@ public class TestMain {
 		System.out.println((int)'\r' + " " + (int)'\n');
 		IOTest io = new IOTest();
 		System.out.println(io.readline());
-//		io.println("안녕하세요");
+		io.println("안녕하세요");
 	}
 
 }
