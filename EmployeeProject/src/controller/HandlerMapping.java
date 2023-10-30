@@ -29,6 +29,9 @@ public class HandlerMapping {
 		case 5:
 			controller = new PrintAllEmployeeController();
 			break;
+		case 6:
+			controller = new JSONEmployeeController();
+			break;
 		}
 		return controller;
 	}
