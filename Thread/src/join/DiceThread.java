@@ -1,8 +1,31 @@
 package join;
 
 import java.util.Random;
+import java.util.Vector;
 
 public class DiceThread extends Thread {
+	private static Vector<Integer> list = new Vector<Integer>();
+	
+	public static double getAverage() {
+		int sum = 0;
+		
+		for(int i=0;i<list.size();i++) {
+			sum += list.get(i);
+		}
+		
+		
+		System.out.println("총합 : " + sum + " " + list.size() );
+		return (double)sum / list.size();
+	}
+	
+	
+	
+	public DiceThread(String name) {
+		super(name);
+	}
+
+
+
 	@Override
 	public void run() {
 		try {
@@ -20,7 +43,8 @@ public class DiceThread extends Thread {
 				break;
 			}
 		}
-		System.out.println(getId() + " - " + count);
+		list.add(count);
+		System.out.println(getName() + "@" + count);
 	}
 }
 

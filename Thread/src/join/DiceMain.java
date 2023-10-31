@@ -7,7 +7,7 @@ public class DiceMain {
 	public static void main(String[] args) {
 		ArrayList<DiceThread> list = new ArrayList<DiceThread>();
 		for(int i=0;i<1000;i++) {
-			list.add(new DiceThread());
+			list.add(new DiceThread("Thread"+i));
 		}
 		list.forEach(a -> a.start());
 		list.forEach(a -> {
@@ -18,8 +18,12 @@ public class DiceMain {
 			}
 		});
 		//종료하기 전에 결과를 출력
-		
+		System.out.println("평균 횟수 : " + DiceThread.getAverage());
 		System.out.println("main 종료");
 	}
 
 }
+
+
+
+
