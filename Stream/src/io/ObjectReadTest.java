@@ -14,6 +14,7 @@ public class ObjectReadTest {
 			//Person 객체 하나 읽어와서 출력
 			Person p = (Person) ois.readObject();
 			
+			System.out.println(p);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
