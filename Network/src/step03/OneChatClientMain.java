@@ -20,7 +20,7 @@ public class OneChatClientMain {
 			while(true) {
 				System.out.println("메세지 입력>");
 				String str = sc.nextLine();
-				if(str.equals("exit")) break;
+				if(str.equals("exit") || server.isClosed()) break;
 				pw.println(str);
 				pw.flush();
 			}

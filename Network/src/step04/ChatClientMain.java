@@ -1,28 +1,26 @@
-package step03;
+package step04;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class OneChatServerMain {
+public class ChatClientMain {
 
 	public static void main(String[] args) {
-		try(ServerSocket server = new ServerSocket(1234);
-				Socket client = server.accept();
-				PrintWriter pw = new PrintWriter(client.getOutputStream());
+		try(	Socket server = new Socket("192.168.5.101",1234);
+				PrintWriter pw = new PrintWriter(server.getOutputStream());
 				Scanner sc = new Scanner(System.in)){
 
-			Worker worker = new Worker(client);
+			Worker worker = new Worker(server);
 			worker.start();
 			
 			while(true) {
 				System.out.println("메세지 입력>");
 				String str = sc.nextLine();
-				if(str.equals("exit") || client.isClosed()) break;
+				if(str.equals("exit") || server.isClosed()) break;
 				pw.println(str);
 				pw.flush();
 			}
@@ -52,11 +50,3 @@ public class OneChatServerMain {
 		}
 	}
 }
-
-
-
-
-
-
-
-
