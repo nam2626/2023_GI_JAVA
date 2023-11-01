@@ -9,11 +9,11 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class ChatServerMain {
-	public static ArrayList<ServerWorker> list = new ArrayList<ServerWorker>();
+	private static ArrayList<ServerWorker> list = new ArrayList<ServerWorker>();
 
 	public static void main(String[] args) {
 		try (ServerSocket server = new ServerSocket(1234);) {
-			System.out.println("에코 서버 오픈 완료....");
+			System.out.println("채팅 서버 오픈 완료....");
 
 			while(true) {
 				Socket client = server.accept();
@@ -28,32 +28,47 @@ public class ChatServerMain {
 			e.printStackTrace();
 		}
 	}
-
+	
+	
 	private static class ServerWorker extends Thread{
 		private Socket client;
-
+		private PrintWriter pw;
+		
 		public ServerWorker(Socket client) {
 			this.client = client;
+			try {
+				pw = new PrintWriter(client.getOutputStream());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		public void printMessage(String msg) {
+			pw.println(msg);
+			pw.flush();
 		}
 		
 		@Override
 		public void run() {
 			try(BufferedReader br = new BufferedReader(
-					new InputStreamReader(client.getInputStream()));
-					PrintWriter pw = new PrintWriter(client.getOutputStream())){
+					new InputStreamReader(client.getInputStream()))){
 				while(true) {
 					String msg = br.readLine();
 					if(msg.equals("exit")) break;
-					pw.println(msg);
-					pw.flush();
+					list.forEach(a -> a.printMessage(client.getInetAddress() + "님의 메세지 : " + msg));
 				}
 			}catch (IOException e) {
 				e.printStackTrace();
 			}
-			System.out.println(client.getInetAddress() + "님이 접속을 종료하셨습니다.");
-			EchoMultiServer.list.remove(this);//접속중인 사용자 관리하는 리스트에서 해당 스레드 객체를 제거
-			System.out.printf("현재 %d명 접속중입니다.\n",EchoMultiServer.list.size());
+			list.forEach(a -> a.printMessage(client.getInetAddress() + "님이 접속을 종료하셨습니다."));
+			list.remove(this);//접속중인 사용자 관리하는 리스트에서 해당 스레드 객체를 제거
+			System.out.printf("현재 %d명 접속중입니다.\n",list.size());
 		}
 
 	}
 }
+
+
+
+
+
