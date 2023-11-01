@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class EchoClientMain {
 
 	public static void main(String[] args) {
-		try(Socket server = new Socket("127.0.0.1",1234);
+		try(Socket server = new Socket("192.168.5.101",1234);
 				BufferedReader br = new BufferedReader(
 						new InputStreamReader(server.getInputStream()));
 				PrintWriter pw = new PrintWriter(server.getOutputStream());
