@@ -13,7 +13,7 @@ public class LamdaEx1 {
 		};
 		
 		System.out.println(plus.calc(10, 5));
-		//(매개변수) -> 계산식; 계산식 앞에는 return이 생략됨
+		//(매개변수) -> 계산식; 계산식 앞에는 return이 생략됨(return이 있으면 자동으로 들어감)
 		Calcurator minus = (a,b) -> a - b; 
 		System.out.println(minus.calc(10, 5));
 		
