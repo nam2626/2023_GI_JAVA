@@ -27,6 +27,16 @@ public class EchoServerWorker extends Thread{
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
+		System.out.println(client.getInetAddress() + "님이 접속을 종료하셨습니다.");
+		EchoMultiServer.list.remove(this);//접속중인 사용자 관리하는 리스트에서 해당 스레드 객체를 제거
+		System.out.printf("현재 %d명 접속중입니다.\n",EchoMultiServer.list.size());
 	}
 
 }
+
+
+
+
+
+
+
