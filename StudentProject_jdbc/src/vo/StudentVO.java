@@ -1,66 +1,85 @@
 package vo;
 
-import java.util.Objects;
-
 public class StudentVO {
 	//학번 이름 학과명 평점
 	private String studentNo;
 	private String studentName;
-	private String major;
+	private String majorName;
+	private int majorNo;
 	private double score;
-	//생성자, 전체필드 초기화
-	public StudentVO(String studentNo, String studentName, String major, double score) {
+	private String gender;
+	
+	public StudentVO(String studentNo, String studentName, int majorNo, double score, String gender) {
 		super();
 		this.studentNo = studentNo;
 		this.studentName = studentName;
-		this.major = major;
+		this.majorNo = majorNo;
 		this.score = score;
+		this.gender = gender;
 	}
-	//set/get
+
+	public StudentVO(String studentNo, String studentName, String majorName, double score, String gender) {
+		super();
+		this.studentNo = studentNo;
+		this.studentName = studentName;
+		this.majorName = majorName;
+		this.score = score;
+		this.gender = gender;
+	}
+
 	public String getStudentNo() {
 		return studentNo;
 	}
+
 	public void setStudentNo(String studentNo) {
 		this.studentNo = studentNo;
 	}
+
 	public String getStudentName() {
 		return studentName;
 	}
+
 	public void setStudentName(String studentName) {
 		this.studentName = studentName;
 	}
-	public String getMajor() {
-		return major;
+
+	public String getMajorName() {
+		return majorName;
 	}
-	public void setMajor(String major) {
-		this.major = major;
+
+	public void setMajorName(String majorName) {
+		this.majorName = majorName;
 	}
+
+	public int getMajorNo() {
+		return majorNo;
+	}
+
+	public void setMajorNo(int majorNo) {
+		this.majorNo = majorNo;
+	}
+
 	public double getScore() {
 		return score;
 	}
+
 	public void setScore(double score) {
 		this.score = score;
 	}
-	//toString --> 학번 이름 학과명 평점
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
 	@Override
 	public String toString() {
-		return String.format("%10s %10s %10s %.2f", studentNo,studentName,major,score);
+		return String.format("%s %s %s %d %f %s", 
+				studentNo, studentName, majorName, majorNo, score,gender);
 	}
-	@Override
-	public int hashCode() {
-		return Objects.hash(studentNo);
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!(obj instanceof StudentVO))
-			return false;
-		StudentVO other = (StudentVO) obj;
-		return Objects.equals(studentNo, other.studentNo);
-	}
-	
-	
 	
 }
 

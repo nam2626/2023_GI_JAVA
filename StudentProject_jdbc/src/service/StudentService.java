@@ -1,5 +1,8 @@
 package service;
 
+import dao.StudentDAO;
+import vo.StudentVO;
+
 public class StudentService {
 	private static StudentService instance = new StudentService();
 
@@ -14,4 +17,18 @@ public class StudentService {
 		return instance;
 	}
 
+	public boolean insertStudent(StudentVO studentVO) {
+		int result = StudentDAO.getInstance().insertStudent(studentVO);
+		return result == 1;
+	}
+
 }
+
+
+
+
+
+
+
+
+

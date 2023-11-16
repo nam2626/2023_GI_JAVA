@@ -1,5 +1,7 @@
 package dao;
 
+import vo.StudentVO;
+
 public class StudentDAO {
 	private static StudentDAO instance = new StudentDAO();
 
@@ -13,5 +15,16 @@ public class StudentDAO {
 		return instance;
 	}
 
+	public int insertStudent(StudentVO studentVO) {
+		//student 테이블에 데이터 등록하는 부분 추가
+			
+		return 0;
+	}
+
 	
 }
+
+
+
+
+
