@@ -13,7 +13,7 @@ public class SearchStudentController implements Controller {
 		System.out.print("검색할 학생의 학번 : ");
 		String studentNo = sc.nextLine();
 		
-		StudentVO vo = StudentService.getInstance().searchStudentNo(studentNo);
+		StudentVO vo = StudentService.getInstance().selectStudentNo(studentNo);
 		
 		if(vo == null)
 			System.out.println(studentNo + " 학번 검색 결과가 없습니다.");

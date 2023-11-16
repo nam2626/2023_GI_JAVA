@@ -66,6 +66,32 @@ public class StudentDAO {
 		return list;
 	}
 
+	public StudentVO selectStudentNo(String studentNo) {
+		StudentVO vo = null;
+		
+		String sql = "select s.std_no, s.std_name, s.std_score, m.major_name, s.gender "
+				+ "from student s join major m on s.major_no = m.major_no"
+				+ " where std_no like ?";
+		try {
+			PreparedStatement pstmt = DBManager.getInstance().getConn().prepareStatement(sql);
+			pstmt.setString(1, studentNo);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				String studentName = rs.getString(2);
+				double score = rs.getDouble(3);
+				String gender  = rs.getString(4);
+				String majorName  = rs.getString(5);
+				
+				vo = new StudentVO(studentNo, studentName, majorName, score, gender);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return vo;
+	}
+
 	
 }
 

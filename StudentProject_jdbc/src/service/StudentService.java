@@ -28,6 +28,10 @@ public class StudentService {
 		return StudentDAO.getInstance().selectAllStudent();
 	}
 
+	public StudentVO selectStudentNo(String studentNo) {
+		return StudentDAO.getInstance().selectStudentNo(studentNo);
+	}
+
 }
 
 
