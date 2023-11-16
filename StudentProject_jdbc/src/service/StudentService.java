@@ -32,6 +32,10 @@ public class StudentService {
 		return StudentDAO.getInstance().selectStudentNo(studentNo);
 	}
 
+	public ArrayList<StudentVO> selectStudentName(String name) {
+		return StudentDAO.getInstance().selectStudentName(name);
+	}
+
 }
 
 

@@ -92,6 +92,32 @@ public class StudentDAO {
 		return vo;
 	}
 
+	public ArrayList<StudentVO> selectStudentName(String name) {
+		ArrayList<StudentVO> list = new ArrayList<StudentVO>();
+		String sql = "select s.std_no, s.std_name, s.std_score, m.major_name, s.gender "
+				+ "from student s join major m on s.major_no = m.major_no"
+				+ " where std_name like '%' || ? || '%'";
+		try {
+			PreparedStatement pstmt = DBManager.getInstance().getConn().prepareStatement(sql);
+			pstmt.setString(1, name);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				String studentNo = rs.getString(1);
+				String studentName = rs.getString(2);
+				double score = rs.getDouble(3);
+				String gender  = rs.getString(4);
+				String majorName  = rs.getString(5);
+				
+				list.add(new StudentVO(studentNo, studentName, majorName, score, gender));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+
 	
 }
 

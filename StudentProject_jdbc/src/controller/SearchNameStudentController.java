@@ -13,7 +13,7 @@ public class SearchNameStudentController implements Controller {
 		System.out.print("검색할 이름 입력 : ");
 		String name = sc.nextLine();
 		
-		ArrayList<StudentVO> list = StudentService.getInstance().searchNameStudent(name);
+		ArrayList<StudentVO> list = StudentService.getInstance().selectStudentName(name);
 		
 		if(list.isEmpty()) {
 			System.out.println("검색 결과가 없습니다.");
