@@ -36,6 +36,10 @@ public class StudentService {
 		return StudentDAO.getInstance().selectStudentName(name);
 	}
 
+	public int updateStudent(StudentVO vo) {
+		return StudentDAO.getInstance().updateStudent(vo);
+	}
+
 }
 
 
