@@ -1,7 +1,9 @@
 package dao;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import config.DBManager;
 import vo.StudentVO;
@@ -37,6 +39,31 @@ public class StudentDAO {
 		}
 		
 		return count;
+	}
+
+	public ArrayList<StudentVO> selectAllStudent() {
+		ArrayList<StudentVO> list = new ArrayList<StudentVO>();
+		
+		String sql = "select s.std_no, s.std_name, s.std_score, m.major_name, s.gender "
+				+ "from student s join major m on s.major_no = m.major_no";
+		try {
+			PreparedStatement pstmt = DBManager.getInstance().getConn().prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				String studentNo = rs.getString(1);
+				String studentName = rs.getString(2);
+				double score = rs.getDouble(3);
+				String gender  = rs.getString(4);
+				String majorName  = rs.getString(5);
+				
+				list.add(new StudentVO(studentNo, studentName, majorName, score, gender));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list;
 	}
 
 	

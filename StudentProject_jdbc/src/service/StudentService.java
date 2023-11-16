@@ -1,5 +1,7 @@
 package service;
 
+import java.util.ArrayList;
+
 import dao.StudentDAO;
 import vo.StudentVO;
 
@@ -20,6 +22,10 @@ public class StudentService {
 	public boolean insertStudent(StudentVO studentVO) {
 		int result = StudentDAO.getInstance().insertStudent(studentVO);
 		return result == 1;
+	}
+
+	public ArrayList<StudentVO> selectAllStudent() {
+		return StudentDAO.getInstance().selectAllStudent();
 	}
 
 }

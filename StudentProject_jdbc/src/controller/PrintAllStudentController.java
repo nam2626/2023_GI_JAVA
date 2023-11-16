@@ -10,7 +10,7 @@ public class PrintAllStudentController implements Controller {
 	@Override
 	public void execute(Scanner sc) {
 		System.out.println("학생정보를 전부 출력합니다.........");
-		ArrayList<StudentVO> list = StudentService.getInstance().getList();
+		ArrayList<StudentVO> list = StudentService.getInstance().selectAllStudent();
 		
 		if(list.isEmpty()) {
 			System.out.println("학생 정보가 하나도 없습니다.");
