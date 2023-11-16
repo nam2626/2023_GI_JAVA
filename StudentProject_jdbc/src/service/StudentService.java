@@ -40,6 +40,10 @@ public class StudentService {
 		return StudentDAO.getInstance().updateStudent(vo);
 	}
 
+	public boolean deleteStudent(String studentNo) {
+		return StudentDAO.getInstance().deleteStudent(studentNo) == 1;
+	}
+
 }
 
 
