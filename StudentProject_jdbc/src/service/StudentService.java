@@ -44,6 +44,10 @@ public class StudentService {
 		return StudentDAO.getInstance().deleteStudent(studentNo) == 1;
 	}
 
+	public ArrayList<StudentVO> topRankStudent() {
+		return StudentDAO.getInstance().topRankStudent();
+	}
+
 }
 
 

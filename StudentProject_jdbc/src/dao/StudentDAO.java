@@ -153,6 +153,29 @@ public class StudentDAO {
 		return count;
 	}
 
+	public ArrayList<StudentVO> topRankStudent() {
+		ArrayList<StudentVO> list = new ArrayList<StudentVO>();
+		String sql = "SELECT * FROM (SELECT RANK() OVER(ORDER BY S.STD_SCORE DESC) AS STD_RANK, S.* FROM STUDENT S) WHERE STD_RANK <= 10";
+		try {
+			PreparedStatement pstmt = DBManager.getInstance().getConn().prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				String studentNo = rs.getString(2);
+				String studentName = rs.getString(3);
+				double score = rs.getDouble(4);
+				String gender  = rs.getString(5);
+				String majorName  = rs.getString(6);
+				
+				list.add(new StudentVO(studentNo, studentName, majorName, score, gender));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+
 	
 }
 

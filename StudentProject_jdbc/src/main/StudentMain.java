@@ -17,7 +17,7 @@ public class StudentMain {
 			System.out.println("3. 학생정보 수정");
 			System.out.println("4. 학생정보 삭제");
 			System.out.println("5. 학생정보 전체 조회");
-			System.out.println("6. 석차 1등 조회");
+			System.out.println("6. 석차 10등까지 조회");
 			System.out.println("7. 학생 이름으로 조회");
 			System.out.println("8. 전체 학과 목록을 조회");
 			System.out.println("0. 프로그램 종료");
