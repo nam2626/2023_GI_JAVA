@@ -1,6 +1,7 @@
 package service;
 
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 import dao.StudentDAO;
 import vo.StudentVO;
@@ -44,7 +45,7 @@ public class StudentService {
 		return StudentDAO.getInstance().deleteStudent(studentNo) == 1;
 	}
 
-	public ArrayList<StudentVO> topRankStudent() {
+	public TreeMap<Integer, ArrayList<StudentVO>> topRankStudent() {
 		return StudentDAO.getInstance().topRankStudent();
 	}
 

@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 import config.DBManager;
 import vo.StudentVO;
@@ -153,8 +154,8 @@ public class StudentDAO {
 		return count;
 	}
 
-	public ArrayList<StudentVO> topRankStudent() {
-		ArrayList<StudentVO> list = new ArrayList<StudentVO>();
+	public TreeMap<Integer, ArrayList<StudentVO>> topRankStudent() {
+		TreeMap<Integer, ArrayList<StudentVO>> map = new TreeMap<Integer, ArrayList<StudentVO>>();
 		String sql = "SELECT * FROM (SELECT RANK() OVER(ORDER BY S.STD_SCORE DESC) AS STD_RANK, S.* FROM STUDENT S) WHERE STD_RANK <= 10";
 		try {
 			PreparedStatement pstmt = DBManager.getInstance().getConn().prepareStatement(sql);
@@ -167,13 +168,18 @@ public class StudentDAO {
 				String gender  = rs.getString(5);
 				String majorName  = rs.getString(6);
 				
+				ArrayList<StudentVO> list = map.get(rs.getInt(1));
+				if(list == null) {
+					list = new ArrayList<StudentVO>();
+					map.put(rs.getInt(1), list);
+				}
 				list.add(new StudentVO(studentNo, studentName, majorName, score, gender));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		return list;
+		return map;
 	}
 
 	
