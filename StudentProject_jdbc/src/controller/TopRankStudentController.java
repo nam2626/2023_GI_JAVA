@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.TreeMap;
 
@@ -16,7 +17,27 @@ public class TopRankStudentController implements Controller {
 		if(map.isEmpty())
 			System.out.println("학생 데이터가 하나도 없습니다.");
 		else {
+//			Iterator<Integer> it = map.keySet().iterator();
+//			
+//			while(it.hasNext()) {
+//				int rank = it.next();
+//				
+//				System.out.println(rank + " " + map.get(rank));
+//			}
 			
+			map.forEach((k, list) -> System.out.println(k + " " + list));
 		}
 	}
 }
+
+
+
+
+ 
+
+
+
+
+
+
+
