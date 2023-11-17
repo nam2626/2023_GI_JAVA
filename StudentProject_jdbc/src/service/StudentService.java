@@ -49,6 +49,10 @@ public class StudentService {
 		return StudentDAO.getInstance().topRankStudent();
 	}
 
+	public ArrayList<String> selectAllMajor() {
+		return StudentDAO.getInstance().selectAllMajor();
+	}
+
 }
 
 

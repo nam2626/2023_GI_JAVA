@@ -182,6 +182,25 @@ public class StudentDAO {
 		return map;
 	}
 
+	public ArrayList<String> selectAllMajor() {
+		ArrayList<String> list = new ArrayList<String>();
+		
+		String sql = "select major_no || ' - ' || major_name from major";
+		try {
+			PreparedStatement pstmt = DBManager.getInstance().getConn().prepareStatement(sql);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				list.add(rs.getString(1));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+
 	
 }
 

@@ -10,10 +10,9 @@ public class PrintAllMajorController implements Controller {
 	@Override
 	public void execute(Scanner sc) {
 		System.out.println("전체 학과 출력.....");
-		ArrayList<String> list = StudentService.getInstance().getMajorList();
+		ArrayList<String> list = StudentService.getInstance().selectAllMajor();
 		
-		for(int i=0;i<list.size();i++)
-			System.out.println(list.get(i));
+		list.forEach(str -> System.out.println(str));
 		
 	}
 
